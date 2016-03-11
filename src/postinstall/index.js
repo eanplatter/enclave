@@ -4,6 +4,7 @@ var prompt = require('prompt')
 var prompts = require('./prompts')
 var spinner = require('../cli-helpers/spinner')
 var clientFiles = require('./clientFiles')
+var chalk = require('chalk')
 
 /**
  * Handle errors from the cli prompts.
@@ -64,13 +65,13 @@ function configureConfigFile(err, result) {
   if (err) {
     return onErr(err)
   }
-  console.log('Here\'s what I\'ve got down, if something is wrong you can edit this in your enclave.js file.:'.yellow)
-  console.log('  entry: '.red + result.entry.magenta)
-  console.log('  output: '.red + result.output.magenta)
-  console.log(!result.port ? '  port: '.red + '8080' : '  port: '.red + result.port)
-  console.log('  index: '.red + result.index.magenta)
-  console.log('  live: '.red + result.live)
-  console.log('To run your app, just type'.green, '$ npm start'.bold.green)
+  console.log(chalk.yellow('Here\'s what I\'ve got down, if something is wrong you can edit this in your enclave.js file.:'))
+  console.log(chalk.red('  entry: ') + chalk.magenta(result.entry))
+  console.log(chalk.red('  output: ') + chalk.magenta(result.output))
+  console.log(!result.port ? chalk.red('  port: 8080') : chalk.red('  port: ') + chalk.magenta(result.port))
+  console.log(chalk.red('  index: ') + chalk.magenta(result.index))
+  console.log(chalk.red('  live: ') + chalk.magenta(result.live))
+  console.log(chalk.green('To run your app, just type'), chalk.green.bold('$ npm start'))
   shell.sed(insertScript.flag, insertScript.insertionPoint, insertScript.addition, insertScript.file)
   preventFinishFor(5000)
 }
