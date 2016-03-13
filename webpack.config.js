@@ -5,6 +5,8 @@ var stringSafetyNet = require('./src/utils/javascriptUtils').stringSafetyNet
 var HotReloader = new webpack.HotModuleReplacementPlugin()
 var pathPrefix = '../../'
 var isDeveloping
+
+// this is a test
 try {
   isDeveloping = require('./dev-mode')
 } catch (e) {
