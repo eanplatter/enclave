@@ -73,7 +73,7 @@ module.exports = {
         loader: 'url-loader?limit=8192'
       },
       {
-        test: /\.[s]?css$/,
+        test: /\.(s(a|c))?(c)?ss$/,
         exclude: /node_modules/,
         loader: 'style-loader!css-loader!sass-loader'
       }
