@@ -1,5 +1,5 @@
 var shell = require('shelljs')
-var requiredDependencies = require('./requiredDependencies');
+var requiredDependencies = require('./requiredDependencies')
 
 var WEBPACK_DEV_CONFIG = './node_modules/enclave/webpack.config.js'
 var WEBPACK_PROD_CONFIG = './node_modules/enclave/webpack.config.build.js'
