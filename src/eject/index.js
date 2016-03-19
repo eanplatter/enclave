@@ -30,6 +30,12 @@ shell.sed(
   routeAdjustments.files
 )
 
+shell.sed(
+  prefixAdjustments.flag,
+  prefixAdjustments.insertionPoint,
+  prefixAdjustments.addition,
+  prefixAdjustments.files
+)
 
 shell.mv(WEBPACK_DEV_CONFIG, './webpack.config.js')
 shell.mv(WEBPACK_PROD_CONFIG, './webpack.config.build.js')
