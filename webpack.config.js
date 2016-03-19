@@ -1,7 +1,6 @@
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var settings = require('../../enclave.js')
-var stringSafetyNet = require('./src/utils/javascriptUtils').stringSafetyNet
 var HotReloader = new webpack.HotModuleReplacementPlugin()
 var pathPrefix = '../../'
 var isDeveloping
@@ -36,13 +35,13 @@ if (JSON.parse(settings.live)) {
 var entryArr = [
   liveReloadPort,
   liveReloadServer,
-  pathPrefix + stringSafetyNet(settings.entry, 'App.js')
+  pathPrefix + settings.entry
 ].filter(function(item) {
   return !!item && item
 })
 
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: pathPrefix + stringSafetyNet(settings.index, 'index.html'),
+  template: pathPrefix + settings.index,
   filename: 'index.html',
   inject: 'body'
 })
@@ -50,7 +49,7 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
   entry: entryArr,
   output: {
-    path: pathPrefix + stringSafetyNet(settings.output, 'dist'),
+    path: pathPrefix + settings.output,
     filename: 'index_bundle.js'
   },
   module: {
@@ -89,7 +88,7 @@ module.exports = {
     HotReloader,
   ],
   devServer: {
-    contentBase: pathPrefix + stringSafetyNet(settings.output, 'dist'),
+    contentBase: pathPrefix + settings.output,
     hot: true,
   }
 }
