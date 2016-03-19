@@ -8,9 +8,15 @@ var concatenatedDependencies = requiredDependencies.reduce(function (a, b) {
   return a + ' ' + b
 })
 
-shell.exec('npm i -S ' + concatenatedDependencies, {silent: true})
 
 var routeAdjustments = {
+  flag: '-i',
+  insertionPoint: 'var pathPrefix = \'../../\'',
+  addition: 'var pathPrefix = \'./\'',
+  files: [WEBPACK_DEV_CONFIG, WEBPACK_PROD_CONFIG]
+}
+
+var prefixAdjustments = {
   flag: '-i',
   insertionPoint: 'var settings = require(\'../../enclave.js\')',
   addition: 'var settings = require(\'./enclave.js\')',
@@ -27,3 +33,4 @@ shell.sed(
 
 shell.mv(WEBPACK_DEV_CONFIG, './webpack.config.js')
 shell.mv(WEBPACK_PROD_CONFIG, './webpack.config.build.js')
+shell.exec('npm i -S ' + concatenatedDependencies, {silent: true})
