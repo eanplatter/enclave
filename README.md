@@ -1,4 +1,4 @@
-_NOTICE: I'm not actively working on new features for enclave, but am focusing my efforts on the official CLI tool for react: [create-react-app](https://github.com/facebookincubator/create-react-app)_. If you are still using enclave and want to make an issue or PR I am happy to respond and make updates :)
+_NOTICE: I'm not actively working on new features for enclave. You should check out the official CLI tool for react: [create-react-app](https://github.com/facebookincubator/create-react-app)_. If you are still using enclave and want to make an issue or PR I am happy to respond and make updates :)
 <p align="center">
   <img alt="enclave" src="http://i1264.photobucket.com/albums/jj488/eanplatter1/enclave-logo_zpslmhskufg.png" width="546">
 </p>
