@@ -4,8 +4,8 @@
   "description": "An API for compiling React applications with Webpack",
   "main": "index.js",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/eanplatter/enclave.git"
+    "url": "https://github.com/eanplatter/enclave.git",
+    "type": "git"
   },
   "scripts": {
     "postinstall": "node src/postinstall/index.js",
