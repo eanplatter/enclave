@@ -10,9 +10,6 @@ _NOTICE: I'm not actively working on new features for enclave. You should check 
   <a href='https://www.npmjs.org/package/enclave'>
     <img src="https://img.shields.io/npm/v/enclave.svg?style=flat-square" />
   </a>
-  <a href='https://enclave-cli.herokuapp.com/'>
-    <img src="http://enclave-cli.herokuapp.com/badge.svg" />
-  </a>
   <a href='http://npm-stat.com/charts.html?package=enclave&from=2016-03-01'>
     <img src="https://img.shields.io/npm/dm/enclave.svg?style=flat-square" />
   </a>
