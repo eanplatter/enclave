@@ -4,6 +4,8 @@ var settings = require('../../enclave.js')
 var HotReloader = new webpack.HotModuleReplacementPlugin()
 var pathPrefix = '../../'
 var isDeveloping
+
+// this is a test
 try {
   isDeveloping = require('./dev-mode')
 } catch (e) {
